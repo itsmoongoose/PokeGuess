@@ -12,7 +12,7 @@
     --yellow: #fec646;
     --red: #de422ddb;
     --dark-red: #ca402e;
-    --text-background: #f7e6c098;
+    --text-background: #f7e6c0b5;
 }
 
 body {
@@ -27,17 +27,42 @@ body {
 header {
     grid-column: 2;
     grid-row: 1;
+    background-color: var(--text-background);
+    border: 2px solid var(--text-background);
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.30) 0px 5px 15px;
+    margin: 20px 150px 10px;
+    padding: 10px;
 }
 
 h1 {
     text-align: center;
     font-size: 45px;
     color: var(--dark-brown);
-    background-color: var(--text-background);
-    border: 2px solid var(--text-background);
+    margin-bottom: 10px;
+}
+
+.navbar-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.navbar-container > a {
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    font-size: 28px;
+    color: var(--dark-brown);
+    text-decoration: none;
+    border: 2px solid var(--dark-brown);
     border-radius: 5px;
-    margin: 20px 150px;
-    padding: 5px;
+    padding-top: 6px;
+}
+
+.navbar-container > a:hover {
+    color: var(--dark-red);
+    border-color: var(--dark-red);
 }
 
 #main-container {
