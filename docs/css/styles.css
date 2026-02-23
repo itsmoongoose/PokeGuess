@@ -1,0 +1,194 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+:root {
+    --dark-brown: #341704;
+    --light-brown: #915f35;
+    --cream: #f7edd9;
+    --yellow: #fec646;
+    --red: #de422ddb;
+    --dark-red: #ca402e;
+    --text-background: #f7e6c098;
+}
+
+body {
+    background-image: url('../img/pikachu-background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: 2fr 5fr 2fr;
+    color: var(--dark-brown);
+}
+
+header {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+h1 {
+    text-align: center;
+    font-size: 45px;
+    color: var(--dark-brown);
+    background-color: var(--text-background);
+    border: 2px solid var(--text-background);
+    border-radius: 5px;
+    margin: 20px 150px;
+    padding: 5px;
+}
+
+#main-container {
+    grid-column: 2;
+    grid-row: 2;
+    width: 100%;
+    height: 500px;
+    background-color: var(--text-background);
+    border: 2px solid var(--text-background);
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: 20px 0 0;
+}
+
+#search-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 10px;
+}
+
+#search-input {
+    width: 75%;
+    height: 45px;
+    font-size: 22px;
+    color: var(--dark-brown);
+    background-color: var(--cream);
+    border: 2px solid var(--light-brown);
+    border-radius: 5px;
+    margin-right: 5px;
+    padding: 10px;
+}
+
+#search-input:focus {
+    outline: 2px solid var(--light-brown);
+}
+
+#submit-btn {
+    font-size: 20px;
+    color: var(--dark-brown);
+    background-color: var(--cream);
+    border: 2px solid var(--light-brown);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#submit-btn:hover {
+    background-color: var(--red);
+    border-color: var(--dark-brown);
+}
+
+.error-paragraph {
+    font-size: 20px;
+    color: var(--dark-red);
+    text-align: center;
+    margin-top: 15px;
+}
+
+.output-container {
+    width: 100%;
+    height: 80%;
+    margin: 40px 0 20px 0;
+    padding: 0 10px;
+    overflow-y: scroll;
+    scrollbar-color: var(--light-brown) var(--cream);
+}
+
+.small-size {
+    height: 73%;
+}
+
+figure {
+    float: left;
+    display: block;
+    width: 200px;
+    height: 390px;
+}
+
+figcaption {
+    padding-right: 8px;
+    color: var(--dark-red);
+}
+
+.placeholder-img {
+    display: block;
+    width: 200px;
+    height: auto;
+}
+
+.pokemon-img {
+    float: left;
+    width: 200px;
+    height: auto;
+}
+
+.pokemon-name {
+    font-size: 35px;
+    font-weight: bolder;
+    margin-bottom: 10px;
+}
+
+.pokemon-height, .pokemon-weight {
+    display: inline;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.pokemon-experience, .types-text, .abilities-text {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+li:first-child {
+    margin-top: 5px;
+}
+
+li {
+    font-size: 18px;
+    list-style-position: inside;
+    margin-top: 3px;
+}
+
+.pokemon-type {
+    font-size: 18px;
+    margin-top: 2px;
+}
+
+footer {
+    grid-column: 2;
+    grid-row: 3;
+    display: flex;
+    flex-direction: column;
+}
+
+.img-credits {
+    color: var(--dark-brown);
+    margin-bottom: 3px;
+}
+
+.img-credits:hover {
+    color: var(--dark-red);
+}
+
+.type-container {
+    display: inline-block;
+    margin: 5px 5px;
+    text-align: center;
+}
+
+.type-image {
+    width: 32px;
+    height: 32px;
+}
