@@ -8,6 +8,7 @@ const generateBtn = document.querySelector("#generate-btn");
 let errorParagraph = "";
 let errContent;
 let newDiv;
+let guessDiv;
 let outputDisplayed = false;
 let words;
 let capitalizedWords;
@@ -43,7 +44,7 @@ function fetchData() {
         if (response.status >= 200 && response.status <= 299) {
             if (newDiv) {
                 newDiv.innerHTML = "";
-                newDiv.classList.remove("small-size");
+                // newDiv.classList.remove("small-size");
             } else {
                 newDiv = document.createElement("div");
                 newDiv.classList.add("output-container");
@@ -162,24 +163,28 @@ function fetchData() {
                 if (hideName == true) {
 
                     // Create Element -- div for guess form
-                    const guessDiv = document.createElement("div");
+                    guessDiv = document.createElement("div");
 
                     // Create Element -- guess form
                     const guessForm = document.createElement("form");
+                    guessForm.id = "guess-form";
                     guessForm.action = "#";
                     guessForm.method = "GET";
+                    guessForm.classList.add("search-form");
                     guessDiv.appendChild(guessForm);
 
                     // Create Element -- input field
                     const guessInputField = document.createElement("input");
                     guessInputField.type = "text";
                     guessInputField.placeholder = "Which Pokemon is this?";
+                    guessInputField.classList.add("search-input");
                     guessForm.appendChild(guessInputField);
 
                     // Create Element -- submit button
                     const guessSubmitBtn = document.createElement("input");
                     guessSubmitBtn.type = "submit";
                     guessSubmitBtn.value = "Submit";
+                    guessSubmitBtn.classList.add("submit-btn");
                     guessForm.appendChild(guessSubmitBtn);
 
                     // Add created elements to page
@@ -239,6 +244,9 @@ if (generateBtn != null) {
         const randomNum = Math.floor(Math.random() * 1025) + 1;
         pokemonName = randomNum;
         hideName = true;
+        if (guessDiv != null) { // checks if guess div is already displayed; removes if true
+            mainContainer.removeChild(guessDiv);
+        }
         fetchData();
     });
 }
