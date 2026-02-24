@@ -157,6 +157,34 @@ function fetchData() {
                     newDiv.appendChild(typeDiv);
                 }
                 mainContainer.appendChild(newDiv);
+
+                // Create div for guess input form
+                if (hideName == true) {
+
+                    // Create Element -- div for guess form
+                    const guessDiv = document.createElement("div");
+
+                    // Create Element -- guess form
+                    const guessForm = document.createElement("form");
+                    guessForm.action = "#";
+                    guessForm.method = "GET";
+                    guessDiv.appendChild(guessForm);
+
+                    // Create Element -- input field
+                    const guessInputField = document.createElement("input");
+                    guessInputField.type = "text";
+                    guessInputField.placeholder = "Which Pokemon is this?";
+                    guessForm.appendChild(guessInputField);
+
+                    // Create Element -- submit button
+                    const guessSubmitBtn = document.createElement("input");
+                    guessSubmitBtn.type = "submit";
+                    guessSubmitBtn.value = "Submit";
+                    guessForm.appendChild(guessSubmitBtn);
+
+                    // Add created elements to page
+                    mainContainer.appendChild(guessDiv);
+                }
                 outputDisplayed = true;
             });
 
@@ -180,28 +208,30 @@ function fetchData() {
 }
 
 // Event Listener -- search form
-searchForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-    pokemonName = searchInput.value.trim();
-    searchInput.value = "";
-    hideName = false;
+if (searchForm != null) {
+    searchForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        pokemonName = searchInput.value.trim();
+        searchInput.value = "";
+        hideName = false;
 
-    // If Statement -- if input is empty
-    if (!pokemonName) {
+        // If Statement -- if input is empty
+        if (!pokemonName) {
 
-        // If Statement -- if pokemon already displayed, change main container size for scrollbar/overflow
-        if (outputDisplayed == true) {
-            newDiv.classList.add("small-size");
-        }
-        if (errorParagraph) { // if errorParagraph already exists, clear it before creating another
-            clearError();
-        }
-        errContent = "Input must include at least one non-whitespace character.";
-        errorMessage();
-    } else {
-        fetchData();
-    };
-});
+            // If Statement -- if pokemon already displayed, change main container size for scrollbar/overflow
+            if (outputDisplayed == true) {
+                newDiv.classList.add("small-size");
+            }
+            if (errorParagraph) { // if errorParagraph already exists, clear it before creating another
+                clearError();
+            }
+            errContent = "Input must include at least one non-whitespace character.";
+            errorMessage();
+        } else {
+            fetchData();
+        };
+    });
+}
 
 // Event Listener -- generate button
 if (generateBtn != null) {
