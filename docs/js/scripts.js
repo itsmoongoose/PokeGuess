@@ -14,6 +14,9 @@ let words;
 let capitalizedWords;
 let pokemonName = "";
 let hideName;
+let correctGuessCount = 0;
+let incorrectGuessCount = 0;
+let announcement;
 
 // Function -- Error Message
 function errorMessage() {
@@ -37,6 +40,83 @@ function capitalizeWords() {
     capitalizedWords = upperCaseArray.join(" ");
 }
 
+// Function -- Create and Calculate Stats
+function displayStats() {
+    const announceDiv = document.createElement("div");
+    const announceH2 = document.createElement("h2");
+    announceH2.textContent = announcement;
+    const announceP = document.createElement("p");
+    announceP.textContent = `This Pokemon is ${pokemonName}.`
+    const statsMessage = document.createElement("p");
+    statsMessage.textContent = `Correct Guesses: ${correctGuessCount} — Incorrect Guesses: ${incorrectGuessCount}`;
+
+    // Calculate success rate percentage
+    const successRate = (correctGuessCount / (correctGuessCount + incorrectGuessCount)) * 100;
+    const statsPercent = document.createElement("p");
+    statsPercent.textContent = `Success Rate: ${successRate}%`;
+
+    // Display created elements on page
+    announceDiv.appendChild(announceH2);
+    announceDiv.appendChild(announceP);
+    announceDiv.appendChild(statsMessage);
+    announceDiv.appendChild(statsPercent);
+    mainContainer.appendChild(announceDiv);
+}
+
+// Function -- Create guessDiv
+function createGuessDiv() {
+    guessDiv = document.createElement("div");
+
+    // Create Element -- guess form
+    const guessForm = document.createElement("form");
+    guessForm.id = "guess-form";
+    guessForm.action = "#";
+    guessForm.method = "GET";
+    guessForm.classList.add("search-form");
+    guessDiv.appendChild(guessForm);
+
+    // Create Element -- input field
+    const guessInputField = document.createElement("input");
+    guessInputField.type = "text";
+    guessInputField.placeholder = "Which Pokemon is this?";
+    guessInputField.classList.add("search-input");
+    guessForm.appendChild(guessInputField);
+
+    // Create Element -- submit button
+    const guessSubmitBtn = document.createElement("input");
+    guessSubmitBtn.type = "submit";
+    guessSubmitBtn.value = "Submit";
+    guessSubmitBtn.classList.add("submit-btn");
+    guessForm.appendChild(guessSubmitBtn);
+
+    // Add created elements to page
+    mainContainer.appendChild(guessDiv);
+
+    // Event Listener for guessForm
+    guessForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        let pokemonGuess = guessInputField.value.trim();
+        pokemonGuess = pokemonGuess.toLowerCase();
+
+        // Clear main container divs
+        mainContainer.removeChild(newDiv);
+        mainContainer.removeChild(guessDiv);
+
+        // Create Elements -- correct guess
+        if (pokemonGuess == pokemonName) {
+            correctGuessCount += 1;
+            announcement = "Correct!";
+            displayStats();
+
+        // Create Elements -- incorrect guess
+        } else {
+            incorrectGuessCount += 1;
+            announcement = "Incorrect!";
+            displayStats();
+        }
+    });
+}
+
 // Function -- Fetch API Data
 function fetchData() {
     fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`).then(response => {
@@ -50,6 +130,7 @@ function fetchData() {
                 newDiv.classList.add("output-container");
             }
             response = response.json().then(pokemonData => {
+                pokemonName = pokemonData.name;
 
                 // Pokemon Sprite
                 const newImg = document.createElement("img");
@@ -161,34 +242,7 @@ function fetchData() {
 
                 // Create div for guess input form
                 if (hideName == true) {
-
-                    // Create Element -- div for guess form
-                    guessDiv = document.createElement("div");
-
-                    // Create Element -- guess form
-                    const guessForm = document.createElement("form");
-                    guessForm.id = "guess-form";
-                    guessForm.action = "#";
-                    guessForm.method = "GET";
-                    guessForm.classList.add("search-form");
-                    guessDiv.appendChild(guessForm);
-
-                    // Create Element -- input field
-                    const guessInputField = document.createElement("input");
-                    guessInputField.type = "text";
-                    guessInputField.placeholder = "Which Pokemon is this?";
-                    guessInputField.classList.add("search-input");
-                    guessForm.appendChild(guessInputField);
-
-                    // Create Element -- submit button
-                    const guessSubmitBtn = document.createElement("input");
-                    guessSubmitBtn.type = "submit";
-                    guessSubmitBtn.value = "Submit";
-                    guessSubmitBtn.classList.add("submit-btn");
-                    guessForm.appendChild(guessSubmitBtn);
-
-                    // Add created elements to page
-                    mainContainer.appendChild(guessDiv);
+                    createGuessDiv();
                 }
                 outputDisplayed = true;
             });
