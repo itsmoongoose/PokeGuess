@@ -161,7 +161,9 @@ function fetchData() {
                 newDiv.classList.add("output-container");
             }
             response = response.json().then(pokemonData => {
-                generateBtn.classList.remove("hidden");
+                if (generateBtn != null) {
+                    generateBtn.classList.remove("hidden");
+                }
                 pokemonName = pokemonData.name;
 
                 // Pokemon Sprite
@@ -302,6 +304,7 @@ function fetchData() {
 if (searchForm != null) {
     searchForm.addEventListener("submit", (event) => {
         event.preventDefault();
+        mainContainer.removeChild(instructionsContainer);
         pokemonName = searchInput.value.trim();
         searchInput.value = "";
         hideName = false;
