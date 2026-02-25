@@ -1,12 +1,22 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/ZnkBDdua)
-
-## __Pokemon Index and Information - Asynchronous Programming & API__
+## __PokeGuess__
 ### __Project Description__
-__*Scope and Functionality*__ - This website can be used to load information about Pokemon. Once the user enters the name of a valid Pokemon, the website will fetch the data from a [public Pokemon API](https://pokeapi.co/) and display it on this website.
+__*Scope and Functionality*__ - This website has 2 main features both of which fetch data from a [public Pokemon API](https://pokeapi.co/) and display the result on the page:
+__1. Pokemon Guessing Game__
+When the generate button is pressed, a random Pokemon will be generated and displayed to the page. The object of the game is for the player to correctly guess the Pokemon. Though its name will be hidden, the following characteristics will be displayed for each Pokemon to help the player narrow down their guess:
+- Character Sprite
+- Height
+- Weight
+- Base Experience
+- Abilities
+- Type Name(s) and Icon(s)
 
-The following will be displayed for each Pokemon that is searched:
-- Species Name
-- Sprite of the Character
+Once the player submits their guess, they will be shown the stats screen which displays whether their guess was correct or incorrect as well as a summary of their previous guesses.\
+Stats are reset each session; refreshing the page or viewing the Pokedex will clear any saved stats.
+
+__2. Pokedex/Pokemon Dictionary__
+This page can be used to search a Pokemon by name. When the user enters a valid Pokemon name, the following will be displayed:
+- Pokemon Name
+- Character Sprite
 - Height
 - Weight
 - Base Experience
@@ -21,15 +31,9 @@ __*Motivation*__ - This program allows me to demonstrate my knowledge of asynchr
 - GitHub
 - Visual Studio Code
 
-### __Known Bugs__
-There are no known bugs at this time.
+### __Known Bugs and Planned Features__
+There are no known bugs or planned features at this time.
 
 ### __Installation and Setup__
 
-__*Installation*__ - To use this program, please follow the steps below:
-1. Clone the repository to your device
-2. Use File Explorer (or Mac/Linux equivalent) to find and open the folder you cloned the repository in
-3. Once in the folder, open the "src" folder and navigate to the "index.html" file
-4. Open the "index.html" file in your web browser
-
-The program is now setup and ready to use!
+To view this website, just click [here.](https://itsmoongoose.github.io/PokeGuess/)
