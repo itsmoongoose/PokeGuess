@@ -5,6 +5,7 @@ const searchForm = document.querySelector("#search-form");
 const searchInput = document.querySelector("#search-input");
 const submitBtn = document.querySelector("#submit-btn");
 const generateBtn = document.querySelector("#generate-btn");
+const instructionsContainer = document.querySelector(".instructions-container");
 let errorParagraph = "";
 let errContent;
 let newDiv;
@@ -326,6 +327,7 @@ if (searchForm != null) {
 // Event Listener -- generate button
 if (generateBtn != null) {
     generateBtn.addEventListener("click", (event) => {
+        mainContainer.removeChild(instructionsContainer);
         generatePokemon();
         hideName = true;
         if (guessDiv != null) { // checks if guess div is already displayed; removes if true
