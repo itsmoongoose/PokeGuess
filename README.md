@@ -34,7 +34,7 @@ __*Motivation*__ - This program allows me to demonstrate my knowledge of asynchr
 - Visual Studio Code
 
 ### __Known Bugs and Planned Features__
-- __FEAT-NES-001__ - Optimize CSS styling for phone screens and tablet screens
+- __FEAT-NEC-001__ - Optimize CSS styling for phone screens and tablet screens
 
 ### __Installation and Setup__
 
