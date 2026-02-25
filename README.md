@@ -34,9 +34,12 @@ __*Motivation*__ - This program allows me to demonstrate my knowledge of asynchr
 - Visual Studio Code
 
 ### __Known Bugs and Planned Features__
-- __FEAT-NEC-001__ - Optimize CSS styling for phone screens and tablet screens
+__*Bugs*__
 - __ERR-GAM-001__ - Uncaught NotFoundError when the generate button is clicked back to back -- program should generate and display a new pokemon
 - __ERR-DEX-001__ - Uncaught NotFoundError when searching the name of a Pokemon the second time -- program should remove the old Pokemon and display the newly searched one
+
+__*Planned Features*__
+- __FEAT-NEC-001__ - Optimize CSS styling for phone screens and tablet screens
 
 ### __Installation and Setup__
 
