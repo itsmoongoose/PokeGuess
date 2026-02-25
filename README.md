@@ -1,9 +1,9 @@
 ## __PokeGuess__
 ### __Project Description__
-__*Scope and Functionality*__ - This website has 2 main features both of which fetch data from a [public Pokemon API](https://pokeapi.co/) and display the result on the page:
+__*Scope and Functionality*__ - This website has 2 main features, both of which fetch data from a [public Pokemon API](https://pokeapi.co/) and display the result on the page:
 
-__1. Pokemon Guessing Game__
-When the generate button is pressed, a random Pokemon will be generated and displayed to the page. The object of the game is for the player to correctly guess the Pokemon. Though its name will be hidden, the following characteristics will be displayed for each Pokemon to help the player narrow down their guess:
+__1. Pokemon Guessing Game__\
+When the generate button is pressed, a random Pokemon will "spawn" and be displayed to the page. The object of the game is for the player to correctly guess the Pokemon. Though its name will be hidden, the following characteristics will be displayed to help the player narrow down their guess:
 - Character Sprite
 - Height
 - Weight
@@ -11,10 +11,11 @@ When the generate button is pressed, a random Pokemon will be generated and disp
 - Abilities
 - Type Name(s) and Icon(s)
 
-Once the player submits their guess, they will be shown the stats screen which displays whether their guess was correct or incorrect as well as a summary of their previous guesses.\
+Once the player submits their guess, they will be shown the stats screen which displays whether their guess was correct or incorrect as well as a summary of their previous guesses.
+
 Stats are reset each session; refreshing the page or viewing the Pokedex will clear any saved stats.
 
-__2. Pokedex/Pokemon Dictionary__
+__2. Pokedex/Pokemon Dictionary__\
 This page can be used to search a Pokemon by name. When the user enters a valid Pokemon name, the following will be displayed:
 - Pokemon Name
 - Character Sprite
