@@ -100,7 +100,7 @@ h1 {
     outline: 2px solid var(--light-brown);
 }
 
-#submit-btn, .submit-btn, #generate-btn {
+#submit-btn, .submit-btn, #generate-btn, .replay-btn {
     font-size: 20px;
     color: var(--dark-brown);
     background-color: var(--cream);
@@ -114,7 +114,7 @@ h1 {
     border-color: var(--dark-brown);
 }
 
-#generate-btn:hover {
+#generate-btn:hover, .replay-btn:hover {
     border-color: var(--dark-brown);
     font-weight: bold;
 }
@@ -252,6 +252,7 @@ footer {
     color: var(--dark-brown);
     font-size: 31px;
     font-weight: bold;
+    margin: 5px 0 15px;
 }
 
 .hidden {

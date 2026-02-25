@@ -40,6 +40,12 @@ function capitalizeWords() {
     capitalizedWords = upperCaseArray.join(" ");
 }
 
+// Function -- Generate Random Pokemon
+function generatePokemon() {
+    const randomNum = Math.floor(Math.random() * 1025) + 1;
+    pokemonName = randomNum;
+}
+
 // Function -- Create and Calculate Stats
 function displayStats() {
 
@@ -60,16 +66,30 @@ function displayStats() {
     statsMessage.classList.add("announce-paragraph");
 
     // Calculate success rate percentage
-    const successRate = (correctGuessCount / (correctGuessCount + incorrectGuessCount)) * 100;
+    let successRate = (correctGuessCount / (correctGuessCount + incorrectGuessCount)) * 100;
+    successRate = Math.round(successRate * 100) / 100; // roundes number to nearest hundredth
     const statsPercent = document.createElement("p");
     statsPercent.textContent = `Success Rate: ${successRate}%`;
     statsPercent.classList.add("announce-percent");
+
+    // Create Element -- replay button
+    const replayBtn = document.createElement("button");
+    replayBtn.textContent = "Play Again";
+    replayBtn.classList.add("replay-btn");
+
+    // Event Listener -- replay button
+    replayBtn.addEventListener("click", (event) => {
+        generatePokemon();
+        mainContainer.removeChild(announceDiv);
+        fetchData();
+    });
 
     // Display created elements on page
     announceDiv.appendChild(announceH2);
     announceDiv.appendChild(announceP);
     announceDiv.appendChild(statsMessage);
     announceDiv.appendChild(statsPercent);
+    announceDiv.appendChild(replayBtn);
     mainContainer.appendChild(announceDiv);
 }
 
@@ -140,6 +160,7 @@ function fetchData() {
                 newDiv.classList.add("output-container");
             }
             response = response.json().then(pokemonData => {
+                generateBtn.classList.remove("hidden");
                 pokemonName = pokemonData.name;
 
                 // Pokemon Sprite
@@ -305,8 +326,7 @@ if (searchForm != null) {
 // Event Listener -- generate button
 if (generateBtn != null) {
     generateBtn.addEventListener("click", (event) => {
-        const randomNum = Math.floor(Math.random() * 1025) + 1;
-        pokemonName = randomNum;
+        generatePokemon();
         hideName = true;
         if (guessDiv != null) { // checks if guess div is already displayed; removes if true
             mainContainer.removeChild(guessDiv);
