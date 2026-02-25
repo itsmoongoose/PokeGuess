@@ -236,13 +236,13 @@ footer {
     align-items: center;
 }
 
-.announce-h2 {
+.announce-h2, .instructions-container > h2 {
     color: var(--dark-brown);
     font-size: 40px;
     margin: 25px 0 15px;
 }
 
-.announce-paragraph {
+.announce-paragraph, .instructions-container > h3 {
     color: var(--dark-brown);
     font-size: 28px;
     margin-bottom: 10px;
@@ -253,6 +253,29 @@ footer {
     font-size: 31px;
     font-weight: bold;
     margin: 5px 0 15px;
+}
+
+.instructions-container {
+    margin: 30px 100px 0;
+}
+
+.instructions-container li {
+    color: var(--dark-brown);
+    font-size: 18px;
+}
+
+.instructions-container > p {
+    color: var(--dark-brown);
+    font-size: 17px;
+    text-align: center;
+    border: 2px solid var(--dark-brown);
+    border-radius: 5px;
+    padding: 4px;
+    margin-top: 15px;
+}
+
+span {
+    font-weight: bold;
 }
 
 .hidden {
