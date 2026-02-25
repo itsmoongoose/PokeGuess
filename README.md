@@ -1,6 +1,7 @@
 ## __PokeGuess__
 ### __Project Description__
 __*Scope and Functionality*__ - This website has 2 main features both of which fetch data from a [public Pokemon API](https://pokeapi.co/) and display the result on the page:
+
 __1. Pokemon Guessing Game__
 When the generate button is pressed, a random Pokemon will be generated and displayed to the page. The object of the game is for the player to correctly guess the Pokemon. Though its name will be hidden, the following characteristics will be displayed for each Pokemon to help the player narrow down their guess:
 - Character Sprite
@@ -32,8 +33,8 @@ __*Motivation*__ - This program allows me to demonstrate my knowledge of asynchr
 - Visual Studio Code
 
 ### __Known Bugs and Planned Features__
-There are no known bugs or planned features at this time.
+- __FEAT-NES-001__ - Optimize CSS styling for phone screens and tablet screens
 
 ### __Installation and Setup__
 
-To view this website, just click [here.](https://itsmoongoose.github.io/PokeGuess/)
+To view this website, just click [here](https://itsmoongoose.github.io/PokeGuess/).
