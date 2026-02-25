@@ -42,18 +42,28 @@ function capitalizeWords() {
 
 // Function -- Create and Calculate Stats
 function displayStats() {
+
+    // Hide generate button
+    generateBtn.classList.add("hidden");
+
+    // Create Elements -- stats
     const announceDiv = document.createElement("div");
+    announceDiv.classList.add("announce-div");
     const announceH2 = document.createElement("h2");
     announceH2.textContent = announcement;
+    announceH2.classList.add("announce-h2");
     const announceP = document.createElement("p");
     announceP.textContent = `This Pokemon is ${pokemonName}.`
+    announceP.classList.add("announce-paragraph");
     const statsMessage = document.createElement("p");
     statsMessage.textContent = `Correct Guesses: ${correctGuessCount} — Incorrect Guesses: ${incorrectGuessCount}`;
+    statsMessage.classList.add("announce-paragraph");
 
     // Calculate success rate percentage
     const successRate = (correctGuessCount / (correctGuessCount + incorrectGuessCount)) * 100;
     const statsPercent = document.createElement("p");
     statsPercent.textContent = `Success Rate: ${successRate}%`;
+    statsPercent.classList.add("announce-percent");
 
     // Display created elements on page
     announceDiv.appendChild(announceH2);
