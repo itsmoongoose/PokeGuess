@@ -305,7 +305,10 @@ function fetchData() {
 if (searchForm != null) {
     searchForm.addEventListener("submit", (event) => {
         event.preventDefault();
-        mainContainer.removeChild(instructionsContainer);
+        if (instructionsContainerDisplayed == true) {
+            mainContainer.removeChild(instructionsContainer);
+            instructionsContainerDisplayed = false;
+        }
         pokemonName = searchInput.value.trim();
         searchInput.value = "";
         hideName = false;
@@ -331,7 +334,6 @@ if (searchForm != null) {
 // Event Listener -- generate button
 if (generateBtn != null) {
     generateBtn.addEventListener("click", (event) => {
-        console.log(instructionsContainerDisplayed);
         if (instructionsContainerDisplayed == true) {
             mainContainer.removeChild(instructionsContainer);
             instructionsContainerDisplayed = false;

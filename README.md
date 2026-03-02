@@ -35,7 +35,7 @@ __*Motivation*__ - This program allows me to demonstrate my knowledge of asynchr
 
 ### __Known Bugs and Planned Features__
 __*Bugs*__
-- __ERR-DEX-001__ - Uncaught NotFoundError when searching the name of a Pokemon the second time -- program should remove the old Pokemon and display the newly searched one
+No known bugs.
 
 __*Planned Features*__
 - __FEAT-NEC-001__ - Optimize CSS styling for phone screens and tablet screens
