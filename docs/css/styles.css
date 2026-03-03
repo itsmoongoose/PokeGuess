@@ -548,3 +548,108 @@ span {
 .hidden {
     display: none;
 }
+
+/* Tablet Screen Size */
+
+@media screen and (min-width: 768px) {
+    body {
+        background-image: url('../img/tablet-background.jpg');
+    }
+
+    header {
+        width: 55%;
+        margin: 20px 0;
+    }
+
+    h1 {
+        font-size: 45px;
+    }
+
+    .navbar-container > a {
+        width: 115px;
+        height: 45px;
+        font-size: 25px;
+        padding-top: 5px;
+    }
+
+    #main-container {
+        height: 750px;
+    }
+
+    #search-form, .search-form, .button-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin: 15px;
+    }
+
+    #search-input, .search-input {
+        width: 70%;
+        height: 43px;
+        font-size: 23px;
+        margin: 5px 5px 5px 0;
+    }
+
+    #submit-btn, .submit-btn, #generate-btn, .replay-btn {
+        font-size: 22px;
+    }
+
+    .error-paragraph {
+        font-size: 20px;
+    }
+
+    .output-container {
+        margin-left: 40px;
+    }
+
+    .pokemon-name {
+        font-size: 50px;
+    }
+
+    .pokemon-height, .pokemon-weight {
+        font-size: 30px;
+    }
+
+    .pokemon-experience, .types-text, .abilities-text {
+        font-size: 25px;
+        margin-top: 7px;
+    }
+
+    li:first-child {
+        margin-top: 2px;
+    }
+
+    li {
+        font-size: 20px;
+    }
+
+    .pokemon-type {
+        font-size: 20px;
+    }
+
+    .announce-h2, .instructions-container > h2 {
+        font-size: 45px;
+    }
+
+    .announce-paragraph, .instructions-container > h3 {
+        font-size: 26px;
+    }
+
+    .announce-percent {
+        color: var(--dark-brown);
+        font-size: 33px;
+    }
+
+    .instructions-container {
+        margin: 0 40px;
+    }
+
+    .instructions-container li {
+        font-size: 22px;
+    }
+
+    .instructions-container > p {
+        font-size: 20px;
+    }
+}
