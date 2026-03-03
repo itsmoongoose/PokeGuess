@@ -63,9 +63,12 @@ function displayStats() {
     const announceP = document.createElement("p");
     announceP.textContent = `This Pokemon is ${pokemonName}.`
     announceP.classList.add("announce-paragraph");
-    const statsMessage = document.createElement("p");
-    statsMessage.textContent = `Correct Guesses: ${correctGuessCount} — Incorrect Guesses: ${incorrectGuessCount}`;
-    statsMessage.classList.add("announce-paragraph");
+    const correctGuessMessage = document.createElement("p");
+    correctGuessMessage.textContent = `Correct Guesses: ${correctGuessCount}`;
+    correctGuessMessage.classList.add("announce-paragraph");
+    const incorrectGuessMessage = document.createElement("p");
+    incorrectGuessMessage.textContent = `Incorrect Guesses: ${incorrectGuessCount}`;
+    incorrectGuessMessage.classList.add("announce-paragraph");
 
     // Calculate success rate percentage
     let successRate = (correctGuessCount / (correctGuessCount + incorrectGuessCount)) * 100;
@@ -89,7 +92,8 @@ function displayStats() {
     // Display created elements on page
     announceDiv.appendChild(announceH2);
     announceDiv.appendChild(announceP);
-    announceDiv.appendChild(statsMessage);
+    announceDiv.appendChild(correctGuessMessage);
+    announceDiv.appendChild(incorrectGuessMessage);
     announceDiv.appendChild(statsPercent);
     announceDiv.appendChild(replayBtn);
     mainContainer.appendChild(announceDiv);
@@ -207,7 +211,7 @@ function fetchData() {
                 const heightH3 = document.createElement("h3");
                 let pokemonHeight = pokemonData.height / 10 // converts height from decimetres to meteres
                 pokemonHeight = Math.round(pokemonHeight * 100) / 100; // rounds to nearest hundredth
-                heightH3.textContent = `Height: ${pokemonHeight} m — `;
+                heightH3.textContent = `Height: ${pokemonHeight} m`;
                 heightH3.classList.add("pokemon-height");
                 newDiv.appendChild(heightH3);
 

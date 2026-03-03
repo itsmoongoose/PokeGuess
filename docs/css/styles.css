@@ -1,19 +1,4 @@
-* {
-    padding: 0;
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    box-sizing: border-box;
-}
-
-:root {
-    --dark-brown: #341704;
-    --light-brown: #915f35;
-    --cream: #f7edd9;
-    --yellow: #fec646;
-    --red: #de422ddb;
-    --dark-red: #ca402e;
-    --text-background: #f7e6c0b5;
-}
+/*
 
 body {
     background-image: url('../img/pikachu-background.jpg');
@@ -138,8 +123,6 @@ h1 {
     height: 60%;
     margin: 40px 0 20px 0;
     padding: 0 10px;
-    /* overflow-y: scroll;
-    scrollbar-color: var(--light-brown) var(--cream); */
 }
 
 .small-size {
@@ -267,6 +250,290 @@ footer {
 .instructions-container > p {
     color: var(--dark-brown);
     font-size: 17px;
+    text-align: center;
+    border: 2px solid var(--dark-brown);
+    border-radius: 5px;
+    padding: 4px;
+    margin-top: 15px;
+}
+
+span {
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}
+*/
+
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+:root {
+    --dark-brown: #341704;
+    --light-brown: #915f35;
+    --cream: #f7edd9;
+    --yellow: #fec646;
+    --red: #de422ddb;
+    --dark-red: #ca402e;
+    --dark-green: #0e2900;
+    --text-background: #f7e6c0b5;
+}
+
+body {
+    background-image: url('../img/mobile-background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: var(--dark-green);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--dark-brown);
+}
+
+header {
+    width: 75%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--text-background);
+    border: 2px solid var(--text-background);
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.30) 0px 5px 15px;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+h1 {
+    font-size: 35px;
+}
+
+.navbar-container {
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.navbar-container > a {
+    width: 105px;
+    height: 40px;
+    text-align: center;
+    font-size: 23px;
+    color: var(--dark-brown);
+    text-decoration: none;
+    border: 2px solid var(--dark-brown);
+    border-radius: 5px;
+    padding-top: 3px;
+    margin: 5px 2px 0;
+}
+
+.navbar-container > a:hover {
+    color: var(--dark-red);
+    border-color: var(--dark-red);
+}
+
+#main-container {
+    width: 87%;
+    height: 700px;
+    background-color: var(--text-background);
+    border: 2px solid var(--text-background);
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-top: 10px;
+}
+
+#search-form, .search-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+#search-input, .search-input {
+    width: 80%;
+    height: 35px;
+    font-size: 22px;
+    text-align: center;
+    color: var(--dark-brown);
+    background-color: var(--cream);
+    border: 2px solid var(--light-brown);
+    border-radius: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+#search-input:focus {
+    outline: 2px solid var(--light-brown);
+}
+
+#submit-btn, .submit-btn, #generate-btn, .replay-btn {
+    font-size: 20px;
+    color: var(--dark-brown);
+    background-color: var(--cream);
+    border: 2px solid var(--light-brown);
+    border-radius: 5px;
+    padding: 7px 10px;
+}
+
+#submit-btn:hover, .submit-btn:hover {
+    background-color: var(--red);
+    border-color: var(--dark-brown);
+}
+
+#generate-btn:hover, .replay-btn:hover {
+    border-color: var(--dark-brown);
+    font-weight: bold;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 10px;
+}
+
+.error-paragraph {
+    font-size: 18px;
+    color: var(--dark-red);
+    text-align: center;
+    margin-top: 15px;
+}
+
+.output-container {
+    width: 90%;
+    height: 75%;
+    margin-left: 25px;
+}
+
+figure {
+    display: block;
+    width: 200px;
+    height: auto;
+    margin: auto;
+}
+
+figcaption {
+    padding-right: 8px;
+    color: var(--dark-red);
+}
+
+.placeholder-img {
+    display: block;
+    width: 200px;
+    height: auto;
+}
+
+.pokemon-img {
+    width: 200px;
+    height: auto;
+}
+
+.pokemon-name {
+    font-size: 40px;
+    font-weight: bolder;
+    margin-bottom: 10px;
+}
+
+.pokemon-height, .pokemon-weight {
+    display: block;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.pokemon-experience, .types-text, .abilities-text {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+li:first-child {
+    margin-top: 2px;
+}
+
+li {
+    font-size: 18px;
+    list-style-position: inside;
+    margin-top: 3px;
+}
+
+.pokemon-type {
+    font-size: 18px;
+    margin-top: 2px;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+}
+
+.img-credits {
+    color: var(--dark-brown);
+    margin-top: 3px;
+}
+
+.img-credits:hover {
+    color: var(--dark-red);
+}
+
+.type-container {
+    display: inline-block;
+    margin: 5px 5px;
+    text-align: center;
+}
+
+.type-image {
+    width: 32px;
+    height: 32px;
+}
+
+.announce-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.announce-h2, .instructions-container > h2 {
+    color: var(--dark-brown);
+    font-size: 40px;
+    text-align: center;
+    margin: 25px 0 15px;
+}
+
+.announce-paragraph, .instructions-container > h3 {
+    color: var(--dark-brown);
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.announce-percent {
+    color: var(--dark-brown);
+    font-size: 31px;
+    font-weight: bold;
+    margin: 5px 0 15px;
+}
+
+.instructions-container {
+    margin: 0 20px;
+}
+
+.instructions-container li {
+    color: var(--dark-brown);
+    font-size: 19px;
+}
+
+.instructions-container > p {
+    color: var(--dark-brown);
+    font-size: 18px;
     text-align: center;
     border: 2px solid var(--dark-brown);
     border-radius: 5px;
