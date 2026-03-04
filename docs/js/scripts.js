@@ -102,6 +102,7 @@ function displayStats() {
 // Function -- Create guessDiv
 function createGuessDiv() {
     guessDiv = document.createElement("div");
+    guessDiv.classList.add("guess-div");
 
     // Create Element -- guess form
     const guessForm = document.createElement("form");
