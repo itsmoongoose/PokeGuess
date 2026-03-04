@@ -38,7 +38,7 @@ __*Bugs*__
 No known bugs.
 
 __*Planned Features*__
-- __FEAT-NEC-001__ - Optimize CSS styling for phone screens and tablet screens
+No planned features.
 
 ### __Installation and Setup__
 
